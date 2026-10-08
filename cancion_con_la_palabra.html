@@ -6,10 +6,10 @@
 <style>
 :root{color-scheme:dark;--bg:#120d20;--panel:#211832;--line:#423458;--accent:#d8ff58;--text:#faf7ff;--sub:#c0b5d2;--rouletteItem:56px}
 *{box-sizing:border-box}body{margin:0;min-height:100dvh;background:radial-gradient(circle at 50% 5%,#443057 0%,#20172d 43%,var(--bg) 100%);font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text)}
-main{width:min(100%,520px);margin:auto;padding:22px 19px max(28px,env(safe-area-inset-bottom));min-height:100dvh;display:flex;flex-direction:column;gap:15px}
-header{text-align:center}header .eyebrow{font-size:13px;letter-spacing:.22em;color:var(--accent);font-weight:900}h1{font-size:clamp(27px,7vw,36px);line-height:1.1;margin:7px 0}header p{margin:8px 0 0;color:var(--sub);font-size:14px}
+main{width:min(100%,560px);margin:auto;padding:18px 14px max(26px,env(safe-area-inset-bottom));min-height:100dvh;display:flex;flex-direction:column;gap:14px}
+header{text-align:center;padding-top:4px}header .eyebrow{font-size:12px;letter-spacing:.22em;color:var(--accent);font-weight:900}h1{font-size:clamp(28px,7.2vw,38px);line-height:1.05;margin:7px 0 2px;font-weight:1000;letter-spacing:.04em;text-transform:uppercase}header p{margin:6px auto 0;color:var(--sub);font-size:13px;max-width:34ch}
 .settings{display:grid;grid-template-columns:1fr 1fr;gap:10px}label{display:flex;flex-direction:column;gap:7px;color:#e7dcf3;font-size:12px;font-weight:700}select{width:100%;appearance:none;border:1px solid var(--line);border-radius:13px;padding:13px 33px 13px 12px;background:var(--panel);color:white;font:inherit;font-size:14px;outline:none}
-.word-card{background:linear-gradient(140deg,#3e2862,#241732 78%);border:1px solid #715291;border-radius:26px;min-height:340px;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 15px;box-shadow:0 18px 70px #0004;position:relative;overflow:hidden}.word-card:before{content:'♫';position:absolute;top:-42px;right:15px;color:#ffffff0b;font-size:205px;font-weight:800}.word-card .hint{font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:#cfc0e4;z-index:1}
+.word-card{background:linear-gradient(145deg,#43276a,#261836 82%);border:1px solid #7b5a98;border-radius:28px;min-height:385px;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px 12px 18px;box-shadow:0 18px 70px #0004;position:relative;overflow:hidden}.word-card:before{content:'♫';position:absolute;top:-42px;right:15px;color:#ffffff0b;font-size:205px;font-weight:800}.word-card .hint{font-size:12px;letter-spacing:.15em;text-transform:uppercase;font-weight:900;color:#d8ccef;z-index:1}
 .roulette-shell{z-index:1;width:min(100%,420px);margin:15px 0 10px;position:relative}
 .roulette-window{height:calc(var(--rouletteItem) * 3);overflow:hidden;border-radius:22px;background:linear-gradient(180deg,#1e152a,#130e20);border:1px solid #5f4a75;box-shadow:inset 0 0 0 1px #ffffff09, inset 0 25px 25px #00000030}
 .roulette-window:before,.roulette-window:after{content:'';position:absolute;left:12px;right:12px;height:2px;background:#d8ff5899;border-radius:10px;z-index:3}.roulette-window:before{top:calc(50% - var(--rouletteItem)/2)}.roulette-window:after{top:calc(50% + var(--rouletteItem)/2)}
@@ -17,7 +17,7 @@ header{text-align:center}header .eyebrow{font-size:13px;letter-spacing:.22em;col
 .roulette-track{position:relative;transform:translateY(calc(var(--rouletteItem) * -1));will-change:transform}
 .roulette-item{height:var(--rouletteItem);display:flex;align-items:center;justify-content:center;padding:0 12px;font-size:clamp(24px,7vw,38px);font-weight:950;line-height:1;letter-spacing:-.03em;text-transform:uppercase;color:#efe8ff;opacity:.34;filter:blur(.6px);transition:opacity .25s,transform .25s,color .25s,filter .25s;overflow-wrap:anywhere}
 .roulette-item.final{opacity:1;color:var(--accent);transform:scale(1.02);filter:none;text-shadow:0 0 18px #d8ff5840}
-.card-footer{z-index:1;color:#d9cbea;font-size:13px}
+.card-footer{z-index:1;color:#e2d9ef;font-size:12px;margin-top:10px}
 .timer-wrap{display:grid;grid-template-columns:auto 1fr auto;gap:13px;align-items:center;background:#241a35;padding:13px 16px;border:1px solid var(--line);border-radius:16px}.timer{font-weight:900;font-variant-numeric:tabular-nums;font-size:27px;min-width:65px}.bar{height:9px;background:#493a5b;overflow:hidden;border-radius:100px}.bar>div{height:100%;background:var(--accent);width:100%;transition:width .2s linear}.timer-wrap button{background:transparent;color:white;border:1px solid #655076;border-radius:12px;padding:10px 13px;font-size:17px}
 .actions{display:grid;grid-template-columns:1fr 1fr;gap:11px}button{cursor:pointer;touch-action:manipulation}.primary{grid-column:1/-1;border:0;border-radius:18px;background:var(--accent);color:#1b1825;padding:21px 10px;font-size:21px;font-weight:950;box-shadow:0 7px 0 #91aa32}.primary:active{transform:translateY(4px);box-shadow:0 3px 0 #91aa32}.secondary{background:#312340;border:1px solid #604d72;color:white;padding:15px 10px;border-radius:14px;font-size:15px;font-weight:750}.secondary:active{background:#49345f}
 footer{text-align:center;color:var(--sub);font-size:12px;line-height:1.5;margin-top:4px}.pulse{animation:pop .23s ease-out}@keyframes pop{0%{transform:scale(.87);opacity:.3}100%{transform:scale(1);opacity:1}}.timeup{color:#ff8caa!important}button:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
@@ -25,24 +25,24 @@ footer{text-align:center;color:var(--sub);font-size:12px;line-height:1.5;margin-
 .utility{display:grid;grid-template-columns:1fr 1fr;gap:8px}.sound-indicator{font-size:12px;color:#d6c9ea;text-align:center}
 .small{font-size:12px;padding:12px 10px}
 
-.players-setup{background:#241a35;border:1px solid var(--line);border-radius:16px;padding:13px;display:grid;gap:9px}
-.players-setup textarea{width:100%;border-radius:10px;background:#130e20;border:1px solid var(--line);color:white;font:inherit;padding:10px;resize:vertical}
-.players-setup p{font-size:12px;color:var(--sub);margin:0}
-.players-ring{position:relative;width:min(100%,430px);height:350px;margin:5px auto;z-index:2}
-.players-ring .roulette-shell{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70%;margin:0}
-.players-ring .roulette-window{height:168px}
-.player-chip{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#51396a;border:2px solid #9f82bb;color:white;border-radius:18px;padding:6px 5px;min-width:66px;max-width:100px;display:flex;align-items:center;flex-direction:column;gap:2px;box-shadow:0 3px 9px #0007;z-index:5;font-size:11px;font-weight:800;transition:background .1s}
-.player-chip .avatar{font-size:23px}.player-chip .person-name{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.player-chip .pts{color:var(--accent)}
-.player-chip:disabled{opacity:.65;cursor:not-allowed}.player-chip:not(:disabled):active{background:#779523}
-.players-scoreboard{display:flex;flex-wrap:wrap;gap:7px;justify-content:center}.score-pill{padding:6px 10px;background:#372746;border-radius:999px;font-size:12px}.score-pill strong{color:var(--accent)}
-@media(max-width:390px){.players-ring{height:340px}.player-chip{min-width:57px;max-width:79px;font-size:10px;padding:5px 3px}.player-chip .avatar{font-size:20px}.players-ring .roulette-shell{width:68%}.roulette-item{font-size:clamp(18px,6vw,30px)}}
+.players-setup{background:#241a35;border:1px solid var(--line);border-radius:18px;padding:12px;display:grid;gap:8px;box-shadow:0 8px 30px #00000025}
+.players-setup textarea{width:100%;border-radius:12px;background:#130e20;border:1px solid var(--line);color:white;font:inherit;padding:10px;resize:vertical;min-height:64px}
+.players-setup p{font-size:12px;color:var(--sub);margin:0;text-align:center}
+.players-ring{position:relative;width:min(100%,440px);height:390px;margin:8px auto 0;z-index:2}
+.players-ring .roulette-shell{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:66%;max-width:280px;margin:0}
+.players-ring .roulette-window{height:176px}
+.player-chip{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:linear-gradient(180deg,#6a4c87,#553a71);border:2px solid #b295cf;color:white;border-radius:22px;padding:7px 6px;min-width:72px;max-width:88px;min-height:88px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;box-shadow:0 8px 18px #0007;z-index:5;font-size:11px;font-weight:800;transition:background .1s,transform .1s}
+.player-chip .avatar{font-size:24px;line-height:1}.player-chip .person-name{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px;letter-spacing:.02em}.player-chip .pts{color:var(--accent);font-size:10px}
+.player-chip:disabled{opacity:.72;cursor:not-allowed}.player-chip:not(:disabled):active{background:#779523;transform:translate(-50%,-50%) scale(.97)}
+.players-scoreboard{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:-2px}.score-pill{padding:7px 10px;background:#372746;border:1px solid #4f3a64;border-radius:999px;font-size:12px}.score-pill strong{color:var(--accent)}
+@media(max-width:390px){main{padding:14px 10px max(22px,env(safe-area-inset-bottom));gap:12px}h1{font-size:clamp(24px,8vw,30px)}.players-ring{height:350px}.players-ring .roulette-shell{width:64%;max-width:240px}.players-ring .roulette-window{height:162px}.player-chip{min-width:64px;max-width:72px;min-height:76px;font-size:10px;padding:6px 3px;border-radius:18px}.player-chip .avatar{font-size:20px}.player-chip .person-name,.player-chip .pts{font-size:9px}.roulette-item{font-size:clamp(16px,6.4vw,26px)}.timer-wrap{padding:12px 12px;gap:10px}.timer{font-size:24px;min-width:58px}.actions{gap:9px}}
 </style>
 </head>
 <body><main>
-<header><div class="eyebrow">♫ JUEGO MUSICAL ♫</div><h1>¡Cantá esa palabra!</h1><p>Decí o cantá una canción que incluya la palabra que aparece.</p></header>
+<header><div class="eyebrow">♫ JUEGO MUSICAL ♫</div><h1>CANTANTE ESTÁ</h1><p>Decí o cantá una canción que incluya la palabra que aparece.</p></header>
 <div class="settings"><label>DIFICULTAD<select id="difficulty"><option value="easy">Fácil</option><option value="medium" selected>Intermedio</option><option value="hard">Difícil</option><option value="extreme">Extremo</option><option value="all">Todas las palabras</option></select></label><label>TIEMPO POR TURNO<select id="duration"><option value="0">Sin límite</option><option value="10">10 segundos</option><option value="15" selected>15 segundos</option><option value="20">20 segundos</option><option value="30">30 segundos</option><option value="60">60 segundos</option></select></label></div>
 <section class="players-setup"><label for="playerNames">JUGADORES (1 A 10, UNO POR LÍNEA)</label><textarea id="playerNames" rows="2" placeholder="Ana&#10;Juan&#10;Lucía"></textarea><button class="secondary" id="savePlayers">👥 Guardar jugadores</button><p id="playersMessage">Cargá los nombres; cada persona tendrá su propio botón alrededor de la ruleta.</p></section>
-<section class="word-card" aria-live="polite"><div class="hint" id="status">¿Preparados?</div><div class="players-ring" id="playersRing"><div class="roulette-shell"><div class="roulette-glow"></div><div class="roulette-window"><div class="roulette-track" id="rouletteTrack"><div class="roulette-item final">¡A CANTAR!</div><div class="roulette-item">TOCÁ NUEVA PALABRA</div><div class="roulette-item">Y QUE GIRE LA RULETA</div></div></div></div></div><div class="card-footer" id="round">Tocá «Nueva palabra» para empezar</div></section>
+<section class="word-card" aria-live="polite"><div class="hint" id="status">¿Preparados?</div><div class="players-ring" id="playersRing"><div class="roulette-shell"><div class="roulette-glow"></div><div class="roulette-window"><div class="roulette-track" id="rouletteTrack"><div class="roulette-item final">¡A CANTAR!</div><div class="roulette-item">TOCÁ GIRAR RULETA</div><div class="roulette-item">Y QUE GIRE LA RULETA</div></div></div></div></div><div class="card-footer" id="round">Tocá «Girar ruleta» para empezar</div></section>
 <div class="players-scoreboard" id="scoreboard"></div><div class="timer-wrap"><span class="timer" id="timer">0:15</span><div class="bar"><div id="progress"></div></div><button id="toggle" aria-label="Pausar o reanudar cronómetro">Ⅱ</button></div>
 <div class="actions"><button class="primary" id="next">🎰 Girar ruleta</button><button class="secondary" id="correct">✓ Acierto sin jugador</button><button class="secondary" id="skip">↪ Pasar palabra</button></div>
 <div class="add-words"><label for="customWords">AGREGAR PALABRAS (OPCIONAL)</label><textarea id="customWords" rows="2" placeholder="Escribí palabras separadas por comas, por ejemplo: apabullada, zángano, esfinge"></textarea><button class="secondary" id="addCustom">+ Agregar al mazo</button><div class="utility"><button class="secondary small" id="soundToggle">🔊 Sonido activado</button><button class="secondary small" id="resetUsed">♻ Reiniciar palabras usadas</button></div><div class="sound-indicator" id="soundInfo">La ruleta reproduce sonido tipo app durante el giro.</div><div id="dictionaryCount" class="dictionary-count"></div></div><footer><span id="score">0 aciertos · 0 pasadas</span><br>Las palabras se recuerdan por modo y no se repiten hasta agotar el mazo o reiniciarlo. Funciona sin conexión.</footer>
@@ -79,11 +79,11 @@ function renderPlayers(){
  players.forEach((p,i)=>{
    const button=document.createElement('button');button.className='player-chip';button.type='button';button.title=`${p.name}: sumar un punto`;
    const theta=(-Math.PI/2)+i*2*Math.PI/n;
-   const rx=n<=4?40:44,ry=n<=4?38:42;
+   const rx=n<=4?43:(n<=6?45:46), ry=n<=4?41:(n<=6?43:44);
    button.style.left=`${50+rx*Math.cos(theta)}%`;button.style.top=`${50+ry*Math.sin(theta)}%`;
    const icon=document.createElement('span');icon.className='avatar';icon.textContent=['🎤','🎸','🎧','🎹','🥁','🎺','🎷','🎻','🎶','⭐'][i];
    const name=document.createElement('span');name.className='person-name';name.textContent=p.name;
-   const score=document.createElement('span');score.className='pts';score.textContent=`${p.score||0} pt`;
+   const score=document.createElement('span');score.className='pts';score.textContent=`${p.score||0} ${p.score===1?'pt':'pts'}`;
    button.append(icon,name,score);button.disabled=isSpinning||!hasWord||savedPlayerRound===round;
    button.addEventListener('click',()=>awardPlayer(i));ring.append(button);
    const item=document.createElement('span');item.className='score-pill';item.append(document.createTextNode(`${p.name} `));
@@ -102,7 +102,7 @@ $('savePlayers').addEventListener('click',()=>{
  if(!names.length){$('playersMessage').textContent='Ingresá al menos un jugador.';return;}
  const old=new Map(players.map(p=>[p.name.toLocaleLowerCase('es'),p.score||0]));
  players=names.map(name=>({name:name.slice(0,22),score:old.get(name.toLocaleLowerCase('es'))||0}));
- savePlayers();renderPlayers();$('playersMessage').textContent=`${players.length} jugadores listos. Tocá su ícono para sumar un punto.`;
+ savePlayers();renderPlayers();$('playersMessage').textContent=`${players.length} jugadores listos. Tocá el ícono de quien acertó para sumar 1 punto.`;
 });
 
 
@@ -244,7 +244,8 @@ $('soundToggle').addEventListener('click',()=>{soundEnabled=!soundEnabled;localS
 $('difficulty').addEventListener('change',showCount);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)pause()});
 setTrackIntro();
-$('playerNames').value=players.map(p=>p.name).join('\n');renderPlayers();
+if(players.length){$('playerNames').value=players.map(p=>p.name).join('\n');$('playersMessage').textContent=`${players.length} jugadores cargados. Tocá el ícono de quien acertó para sumar 1 punto.`;}
+renderPlayers();
 updateSoundLabel();
 showCount();
 updateTimer();
