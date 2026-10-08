@@ -1,6 +1,6 @@
 # ¡Cantá esa palabra! — Streamlit
 
-App móvil para jugar a cantar una canción que contenga una palabra aleatoria. Incluye niveles, cronómetro, palabras personalizadas y juego sin repetir hasta agotar el mazo.
+App móvil para jugar a cantar una canción que contenga una palabra aleatoria. Incluye ruleta animada con sonido, niveles, cronómetro, hasta 10 jugadores con botones alrededor de la palabra, puntos individuales y palabras personalizadas. Los puntos y las palabras usadas se guardan en el navegador.
 
 ## Publicar gratis en Streamlit Community Cloud
 
@@ -17,3 +17,7 @@ streamlit run app.py
 ```
 
 > Las palabras personalizadas se almacenan en el navegador de cada jugador (no se sincronizan entre dispositivos). La app necesita conexión para abrirse desde Streamlit, pero el juego en sí no hace peticiones a servidores.
+
+## Jugadores y puntuación
+
+Ingresar entre 1 y 10 nombres (uno por línea) y pulsar **Guardar jugadores**. Los íconos se ubican alrededor de la palabra. Al tocar el ícono de quien acertó, se suma un punto y gira la ruleta para el siguiente turno. Los nombres y puntos se conservan en el almacenamiento local del navegador utilizado. No se sincronizan entre distintos celulares.

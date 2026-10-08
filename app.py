@@ -10,4 +10,4 @@ st.markdown('''<style>
 iframe {display:block; border:0 !important;}
 </style>''', unsafe_allow_html=True)
 html = (Path(__file__).parent / 'cancion_con_la_palabra.html').read_text(encoding='utf-8')
-components.html(html, height=1050, scrolling=True)
+components.html(html, height=1550, scrolling=True)
